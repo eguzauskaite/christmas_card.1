@@ -1,0 +1,159 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400;1,700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+
+body {
+    margin: 0;
+}
+.snow,.snow::after,.snow:before {
+    content: "";
+position: absolute;
+top: -650px;
+left: 0;
+right: 0;
+bottom: 0;
+background-image: 
+radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+radial-gradient(3px 3px at 300px 250px, #fff, transparent),
+radial-gradient(3px 3px at 400px 350px, #fff, transparent),
+radial-gradient(3px 3px at 500px 100px, #fff, transparent),
+radial-gradient(3px 3px at 50px 200px, #fff, transparent),
+radial-gradient(3px 3px at 150px 300px, #fff, transparent),
+radial-gradient(3px 3px at 250px 400px, #fff, transparent),
+radial-gradient(3px 3px at 350px 500px, #fff, transparent);
+background-size: 650px 650px;
+
+animation: snowAnim 3s linear;
+animation-iteration-count: infinite;
+}
+.snow::after{
+    margin-left: -250px;
+    opacity: 0.5;
+    filter: blur(2px);
+    animation-direction: reverse;
+    animation-duration: 6s;
+}
+.snow::before{
+    margin-left: -350px;
+    opacity: 0.7;
+    filter: blur(1px);
+    animation-direction: reverse;
+    animation-duration: 9s;
+}
+h1 {
+    font-family: whisper, serif;
+    font-weight: 300px;
+    letter-spacing: 3px;
+    font-size: 100px;
+    margin-bottom: 190px;
+    position: absolute;
+    transform: translateY(-50%);
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.812);
+    mix-blend-mode: overlay;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.812);
+    background: rgba(25, 25, 25, 0.3);
+
+}
+svg {
+    margin-bottom: -10px;
+}
+/* p {
+    font-family: whisper, serif;
+    letter-spacing: 1px;
+    color: #333;
+} */
+.header {
+    position: relative;
+    text-align: center;
+    background-image: url("img.2kaledos.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(250, 246, 246);
+    /* list-style: none;
+    -webkit-mask-image: linear-gradient(#000, rgba(0, 0, 0, 10%));
+    mask-image: linear-gradient(#000, rgba(0, 0, 0, 10%));  
+   */
+}
+.inner-header {
+    height: 70vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.flex {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+      /* z-index: 2;  */
+  
+}
+.wave {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    margin-bottom: -7px;
+}
+.content {
+     position: relative; 
+    height: 40vh;
+    text-align: center;
+    background-color: white;
+}
+/* animation */
+.parallax>use{
+    animation: move-forever 50s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax>use:nth-child(1){
+    animation-delay: -2s;
+animation-duration: 7s;
+}
+.parallax>use:nth-child(2){
+    animation-delay: -3s;
+animation-duration: 10s;
+}
+.parallax>use:nth-child(3){
+    animation-delay: -4s;
+animation-duration: 13s;
+}
+.parallax>use:nth-child(4){
+    animation-delay: -5s;
+animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100%{
+        transform: translate3d(85px, 0, 0);
+    }
+}
+@keyframes snowAnim {
+from{
+    transform: translateY(0);
+}
+to{
+    transform: translateY(650px);
+}
+}
+/* for mobile  */
+@media(max-width:768px){
+    .wave{
+        height: 40px;
+        min-height: 40px;
+    }
+    .content {
+        height: 30vh;
+    }
+    h1 {
+        font-size: 40px;
+     width: 600px;
+    }
+    .img {
+        min-width: 10%;
+    }
+}
